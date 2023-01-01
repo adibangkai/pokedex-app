@@ -22,7 +22,7 @@ const Card = ({ pokeid }) => {
 
   return (
     <div
-      className={`card border-1 bg-darkBgCard border-sky-900  transition-all rounded-xl shadow-xl px-5  py-8 relative hover:cursor-pointer  ${
+      className={`card border-1 bg-darkBgCard border-sky-900  transition-all rounded-xl shadow-xl px-5  py-8 relative  ${
         hoverClassMap[pokemon.types[0].type.name]
       }  `}
     >
@@ -33,7 +33,7 @@ const Card = ({ pokeid }) => {
       />
 
       <img
-        className=" h-48 mx-auto z-10 relative"
+        className=" h-48 mx-auto z-10 relative hover:scale-125 transition-all "
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`}
         alt=""
       />
@@ -55,7 +55,7 @@ const Card = ({ pokeid }) => {
             import.meta.url
           ).href;
           return (
-            <div className={typeColor}>
+            <div className={typeColor} key={p.type.name}>
               <img src={imgUrl} alt="logo type" />
               <p className="text-zinc-50 font-semibold">{p.type.name}</p>
             </div>
@@ -64,7 +64,7 @@ const Card = ({ pokeid }) => {
       </div>
       <Link to={`/details/${pokemon.id}`}>
         <div
-          className={`text-white py-2 text-center w-full font-bold absolute bottom-0 left-0 cursor-pointer shadow-inner rounded-b-lg  bg-${pokemon.types[0].type.name}  `}
+          className={`text-white py-2 text-center w-full font-bold absolute bottom-0 left-0 cursor-pointer shadow-inner rounded-b-lg  hover:cursor-pointer bg-${pokemon.types[0].type.name}  `}
         >
           Details
         </div>

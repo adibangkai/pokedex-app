@@ -1,6 +1,6 @@
 const fetchDetails = async ({ queryKey }) => {
-  const id = queryKey[1];
-  const apiRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const url = queryKey[1];
+  const apiRes = await fetch(url);
 
   if (!apiRes.ok) {
     throw new Error(`details/${id} fetch not ok`);

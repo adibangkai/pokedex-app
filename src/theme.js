@@ -43,7 +43,7 @@ const textColorMap = {
 const hoverClassMap = {
   bug: "hover:bg-lime-700",
   dark: "hover:bg-sky-800",
-  dragon: "hover:bg-blue  -900",
+  dragon: "hover:bg-blue-900",
   electric: "hover:bg-amber-500",
   fairy: "hover:bg-fuchsia-600",
   fighting: "hover:bg-rose-800",

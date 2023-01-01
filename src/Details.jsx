@@ -37,7 +37,8 @@ const JapaneseName = ({ url }) => {
 
 const Details = () => {
   const { id } = useParams();
-  const results = useQuery(["details", id], fetchDetails);
+  const pokeid = `https://pokeapi.co/api/v2/pokemon/${id}/`;
+  const results = useQuery(["details", pokeid], fetchDetails);
 
   function addLeadingZeros(num, totalLength) {
     return String(num).padStart(totalLength, "0");
@@ -101,9 +102,9 @@ const Details = () => {
         />
 
         <div className="grid">
-          <div class="h-[300px]  bg-white mx-auto w-[2px]"></div>
+          <div className="h-[300px]  bg-white mx-auto w-[2px]"></div>
           <img src={imgUrl} alt="logo type" className="my-4 w-9 " />
-          <div class="h-[300px]  bg-white mx-auto w-[2px]"></div>
+          <div className="h-[300px]  bg-white mx-auto w-[2px]"></div>
         </div>
       </div>
       <div className=" col-span-2 p-8">
@@ -112,7 +113,7 @@ const Details = () => {
             <Link to={`/details/${pokemon.id - 1}`}>
               <li className="hover:font-semibold">{"<"}</li>
             </Link>
-            {page.map((p) => {
+            {page.map((p, i) => {
               if (p - 5 > 0) {
                 let pageClass =
                   pokemon.id === p - 5
@@ -120,7 +121,7 @@ const Details = () => {
                     : "font-light hover:opacity-20";
 
                 return (
-                  <Link to={`/details/${p - 5}`}>
+                  <Link key={i} to={`/details/${p - 5}`}>
                     <li className={pageClass}>{p - 5}</li>
                   </Link>
                 );
@@ -132,7 +133,7 @@ const Details = () => {
           </ul>
         </div>
         <div className="flex gap-2 mt-32">
-          {pokemon.types.map((p) => {
+          {pokemon.types.map((p, i) => {
             let typeColor = `${
               backgroundClassMap[p.type.name]
             } p-1 px-2 border-2 rounded-full flex gap-2 capitalize mb-6 w-12 h-12  cursor-pointer`;
@@ -141,7 +142,7 @@ const Details = () => {
               import.meta.url
             ).href;
             return (
-              <div className={typeColor}>
+              <div className={typeColor} key={i}>
                 <img src={imgUrlType} alt={p.type.name} />
               </div>
             );
@@ -149,7 +150,7 @@ const Details = () => {
         </div>
         <h2 className="font-thin text-4xl ">Stats</h2>
 
-        {pokemon.stats.map((stat) => {
+        {pokemon.stats.map((stat, i) => {
           let barColor = " animate-pulse bg-green-700 h-2.5 rounded-full";
           if (stat.base_stat < 40) {
             barColor = " bg-red-600 h-2.5 rounded-full";
@@ -163,7 +164,7 @@ const Details = () => {
             barColor = " bg-lime-500 h-2.5 rounded-full";
           }
           return (
-            <div className="flex gap-2">
+            <div className="flex gap-2" key={i}>
               <div className=" font-thin capitalize whitespace-nowrap w-3/6">
                 {stat.stat.name}
               </div>

@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 import LoadingCard from "./LoadingCard";
+import Results from "./Results";
 import { backgroundClassMap } from "./theme";
 import { fetchPokemon, fetchAll } from "./fetchPokemon";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import ErrorBoundary from "./ErrorBoundary";
 import { useNavigate } from "react-router-dom";
+
 const POKETYPES = [
   "normal",
   "fighting",
@@ -36,6 +38,13 @@ const Main = () => {
   const callAPI = useQuery(["all", pageUrl], fetchAll);
   const pokemonType = typeCall?.data?.pokemon ?? [];
   const callRes = callAPI?.data ?? [];
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    if (callAPI.data) {
+      queryClient.prefetchQuery(["all", callRes.next], fetchAll);
+    }
+  }, [callRes.next, queryClient]);
 
   if (callAPI.isLoading || typeCall.isLoading) {
     const loadImg = new URL(
@@ -44,9 +53,11 @@ const Main = () => {
     ).href;
 
     return (
-      <div className=" animate-pulse flex w-full justify-center items-center pt-48 opacity-70">
-        <img src={loadImg} alt="load" className="w-48" />
-      </div>
+      <>
+        <div className=" animate-pulse flex w-full justify-center items-center pt-48 opacity-70">
+          <img src={loadImg} alt="load" className="w-48" />
+        </div>
+      </>
     );
   }
 
@@ -99,30 +110,24 @@ const Main = () => {
             {callRes.previous && (
               <a
                 onClick={(e) => setPageUrl(callRes.previous)}
-                className="cursor-pointer text-white border-2 border-zinc-100 rounded-md px-2 hover:opacity-90"
+                className="cursor-pointer text-white border-2 border-zinc-100 rounded-md px-2 hover:opacity-60 transition-all hover:scale-110"
               >
                 Prev
               </a>
             )}
             <a
               onClick={(e) => setPageUrl(callRes.next)}
-              className="cursor-pointer text-white border-2 border-zinc-100 rounded-md px-2 hover:opacity-90"
+              className="cursor-pointer text-white border-2 border-zinc-100 rounded-md px-2 hover:opacity-60 transition-all hover:scale-110"
             >
               Next
             </a>
           </div>
         )}
-
-        <div className="grid grid-cols-4 gap-4 mt-4 text-white">
-          {callRes.results.length === 0 && <LoadingCard />}
-          {pokemonType.length == 0 &&
-            callRes.results.map((data) => {
-              return <Card pokeid={data.url} key={data.url} />;
-            })}
-          {pokemonType.map((data) => {
-            return <Card pokeid={data.pokemon.url} key={data.pokemon.url} />;
-          })}
-        </div>
+        <Results
+          key={"key"}
+          pokemonType={pokemonType}
+          pokemon={callRes.results}
+        />
       </div>
     </div>
   );
