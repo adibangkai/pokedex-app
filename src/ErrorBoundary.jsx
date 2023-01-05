@@ -1,4 +1,3 @@
-// mostly code from reactjs.org/docs/error-boundaries.html
 import { Component } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,7 +12,7 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <h2 className="text-center mt-32 font-light">
+        <h2 className="text-center mt-56 font-light">
           There was an error with this pokemon data.{" "}
           <Link to="/">
             <span className="text-sky-500">Click here</span>

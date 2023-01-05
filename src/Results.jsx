@@ -1,6 +1,5 @@
 import ErrorBoundary from "./ErrorBoundary";
 import Card from "./Card";
-import LoadingCard from "./LoadingCard";
 
 const Results = ({ pokemonType, pokemon, key }) => {
   return (
