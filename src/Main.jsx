@@ -62,7 +62,7 @@ const Main = () => {
   }
 
   return (
-    <div className={` pt-10 min-h-screen pt-4 pb-10 `}>
+    <div className={` pt-10  pt-4 pb-10 `}>
       <div className="container mx-auto">
         <div className="flex justify-between items-start">
           <div className="flex w-2/5 overflow-x-scroll gap-3">

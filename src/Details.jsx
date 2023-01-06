@@ -73,7 +73,7 @@ const Details = () => {
   ).href;
   return (
     <div
-      className={`transition duration-150 ease-in-out  mt-5 grid grid-cols-6 gap-1 min-h-full  ${
+      className={`transition duration-150 ease-in-out  mt-5 grid grid-cols-6 gap-1 min-h-screen max-h-full ${
         gradientType[pokemon.types[0].type.name]
       } `}
     >
@@ -98,13 +98,13 @@ const Details = () => {
         <img
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png`}
           alt=""
-          className="mx-auto h-5/6 "
+          className="mx-auto h-4/6 "
         />
 
         <div className="grid">
-          <div className="h-[300px]  bg-white mx-auto w-[2px]"></div>
-          <img src={imgUrl} alt="logo type" className="my-4 w-9 " />
-          <div className="h-[300px]  bg-white mx-auto w-[2px]"></div>
+          <div className="h-[280px]  bg-white mx-auto w-[2px]"></div>
+          <img src={imgUrl} alt="logo type" className="w-9 " />
+          <div className="h-[340px]  bg-white mx-auto w-[2px]"></div>
         </div>
       </div>
       <div className=" col-span-2 p-8">

@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const Results = ({ pokemonType, pokemon, key }) => {
   return (
-    <div className="grid grid-cols-4 gap-4 mt-4 text-white">
+    <div className="grid grid-cols-4 gap-10 mt-4 text-white">
       {pokemonType.length == 0 &&
         pokemon.map((poke, i) => {
           return <Card key={i} pokeid={poke.url} />;
