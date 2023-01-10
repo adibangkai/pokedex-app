@@ -9,6 +9,15 @@ const fetchPokemon = async ({ queryKey }) => {
   return apiRes.json();
 };
 
+export const fetchInfinite = async (url) => {
+  const apiRes = await fetch(url);
+
+  if (!apiRes.ok) {
+    throw new Error(`error!`);
+  }
+
+  return apiRes.json();
+};
 const fetchAll = async ({ queryKey }) => {
   const url = queryKey[1];
   const apiRes = await fetch(url);
