@@ -46,7 +46,7 @@ const Details = () => {
 
   if (results.isLoading) {
     const loadImg = new URL(
-      `assets/pokemontypes/logo-pokemon.svg`,
+      `./assets/pokemontypes/logo-pokemon.svg`,
       import.meta.url
     ).href;
 
@@ -68,7 +68,7 @@ const Details = () => {
   let page = range(parseInt(pokemon.id), parseInt(pokemon.id) + 10, 1);
 
   const imgUrl = new URL(
-    `assets/pokemontypes/${pokemon.types[0].type.name}.svg`,
+    `./assets/pokemontypes/${pokemon.types[0].type.name}.svg`,
     import.meta.url
   ).href;
   return (
@@ -138,7 +138,7 @@ const Details = () => {
               backgroundClassMap[p.type.name]
             } p-1 px-2 border-2 rounded-full flex gap-2 capitalize mb-6 w-12 h-12  cursor-pointer`;
             const imgUrlType = new URL(
-              `assets/pokemontypes/${p.type.name}.svg`,
+              `./assets/pokemontypes/${p.type.name}.svg`,
               import.meta.url
             ).href;
             return (
