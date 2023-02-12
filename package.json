@@ -7,7 +7,7 @@
     "dev": "vite -- --host",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite -- --host"
+    "start": "vite -- --host 0.0.0.0 --port $PORT"
   },
   "keywords": [],
   "author": "Adi Bangkit",
