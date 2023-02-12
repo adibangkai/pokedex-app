@@ -48,7 +48,7 @@ const Main = () => {
 
   if (callAPI.isLoading || typeCall.isLoading) {
     const loadImg = new URL(
-      `assets/pokemontypes/logo-pokemon.svg`,
+      `./assets/pokemontypes/logo-pokemon.svg`,
       import.meta.url
     ).href;
 

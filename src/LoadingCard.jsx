@@ -1,5 +1,5 @@
 const imgUrl = new URL(
-  `assets/pokemontypes/divider-pokeball.svg`,
+  `./assets/pokemontypes/divider-pokeball.svg`,
   import.meta.url
 ).href;
 

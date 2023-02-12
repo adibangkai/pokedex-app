@@ -16,7 +16,7 @@ const Card = ({ pokeid }) => {
   }
 
   const backdrop = new URL(
-    `assets/pokemontypes/${pokemon.types[0].type.name}.svg`,
+    `./assets/pokemontypes/${pokemon.types[0].type.name}.svg`,
     import.meta.url
   ).href;
 
@@ -51,7 +51,7 @@ const Card = ({ pokeid }) => {
             backgroundClassMap[p.type.name]
           } p-1 px-2 rounded-lg flex gap-2 capitalize mb-6`;
           const imgUrl = new URL(
-            `assets/pokemontypes/${p.type.name}.svg`,
+            `./assets/pokemontypes/${p.type.name}.svg`,
             import.meta.url
           ).href;
           return (
