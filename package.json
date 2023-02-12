@@ -1,4 +1,5 @@
 {
+  "homepage": "http://adibangkai.github.io/pokedex-app",
   "name": "pokedex-app",
   "version": "1.0.0",
   "description": "",
@@ -7,7 +8,9 @@
     "dev": "vite -- --host",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite -- --host 0.0.0.0 --port $PORT"
+    "start": "vite -- --host 0.0.0.0 --port $PORT",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "Adi Bangkit",
@@ -24,6 +27,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^4.19.1",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.5"
