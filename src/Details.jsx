@@ -110,7 +110,7 @@ const Details = () => {
       <div className=" col-span-2 p-8">
         <div className="flex text-xl absolute top-14 font-mono right-10">
           <ul className="flex gap-2 mx-auto overflow">
-            <Link to={`pokedex-app/details/${pokemon.id - 1}`}>
+            <Link to={`/pokedex-app/details/${pokemon.id - 1}`}>
               <li className="hover:font-semibold">{"<"}</li>
             </Link>
             {page.map((p, i) => {
@@ -121,13 +121,13 @@ const Details = () => {
                     : "font-light hover:opacity-20";
 
                 return (
-                  <Link key={i} to={`pokedex-app/details/${p - 5}`}>
+                  <Link key={i} to={`/pokedex-app/details/${p - 5}`}>
                     <li className={pageClass}>{p - 5}</li>
                   </Link>
                 );
               }
             })}
-            <Link to={`pokedex-app/details/${pokemon.id + 1}`}>
+            <Link to={`/pokedex-app/details/${pokemon.id + 1}`}>
               <li className="font-serif">{">"}</li>
             </Link>{" "}
           </ul>

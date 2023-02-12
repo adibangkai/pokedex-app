@@ -62,7 +62,7 @@ const Card = ({ pokeid }) => {
           );
         })}
       </div>
-      <Link to={`pokedex-app/details/${pokemon.id}`}>
+      <Link to={`/pokedex-app/details/${pokemon.id}`}>
         <div
           className={`text-white py-2 text-center w-full font-bold absolute bottom-0 left-0 cursor-pointer shadow-inner rounded-b-lg  hover:cursor-pointer bg-${pokemon.types[0].type.name}  `}
         >

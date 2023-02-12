@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/pokedex-app/" element={<Infinite />} />
             <Route path="/pokedex-app/infinite" element={<Main />} />
             <Route path="/pokedex-app/details/:id" element={<Details />} />
-            <Route path="pokedex-app/*" element={<PageNotFound />} />
+            <Route path="/pokedex-app/*" element={<PageNotFound />} />
           </Routes>
         </div>
       </QueryClientProvider>
