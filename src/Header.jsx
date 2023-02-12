@@ -4,7 +4,7 @@ import "./index.css";
 const Header = () => {
   return (
     <section id="header" className="header">
-      <Link to="/">
+      <Link to="/pokedex-app">
         <img src={logo} alt="" className="pt-10 ml-20" />
       </Link>
     </section>

@@ -14,7 +14,7 @@ class ErrorBoundary extends Component {
       return (
         <h2 className="text-center mt-56 font-light">
           There was an error with this pokemon data.{" "}
-          <Link to="/">
+          <Link to="/pokedex/app">
             <span className="text-sky-500">Click here</span>
           </Link>{" "}
           to back to the home page.
