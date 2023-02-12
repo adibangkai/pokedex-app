@@ -5,5 +5,7 @@ export default defineConfig({
   base: "/pokedex-app/",
   plugins: [react()],
   root: "src",
-  outDir: "build",
+  build: {
+    outDir: "../dist",
+  },
 });
