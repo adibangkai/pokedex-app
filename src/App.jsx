@@ -23,10 +23,10 @@ const App = () => {
         <div className="min-h-screen text-white">
           <Header />
           <Routes>
-            <Route path="/" element={<Infinite />} />
-            <Route path="/infinite" element={<Main />} />
-            <Route path="/details/:id" element={<Details />} />
-            <Route path="*" element={<PageNotFound />} />
+            <Route path="/pokedex-app/" element={<Infinite />} />
+            <Route path="/pokedex-app/infinite" element={<Main />} />
+            <Route path="/pokedex-app/details/:id" element={<Details />} />
+            <Route path="pokedex-app/*" element={<PageNotFound />} />
           </Routes>
         </div>
       </QueryClientProvider>
