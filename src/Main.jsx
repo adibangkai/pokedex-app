@@ -63,7 +63,7 @@ const Main = () => {
 
   return (
     <div className={` pt-10  pt-4 pb-10 `}>
-      <div className="container mx-auto">
+      <div className="container mx-20">
         <div className="flex justify-between items-start">
           <div className="flex w-2/5 overflow-x-scroll gap-3">
             {POKETYPES.map((poke, index) => (
@@ -76,7 +76,7 @@ const Main = () => {
               </div>
             ))}
           </div>
-          <div className="w-1/4 ">
+          <div className="w-1/4">
             <form onSubmit={() => navigate(`details/${search}`)}>
               <input
                 type="text"

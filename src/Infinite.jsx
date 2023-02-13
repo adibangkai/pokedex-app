@@ -63,8 +63,8 @@ const Infinite = () => {
   return (
     <div className={` pt-10  pt-4 pb-10 `}>
       <div className="container mx-auto">
-        <div className="flex justify-between items-start">
-          <div className="flex w-2/5 overflow-x-scroll gap-3">
+        <div className="md:flex md:justify-between md:items-start grid place-items-center">
+          <div className="flex w-3/4 md:w-2/5 overflow-x-scroll gap-3">
             {POKETYPES.map((poke, index) => (
               <div
                 key={poke}
@@ -75,7 +75,7 @@ const Infinite = () => {
               </div>
             ))}
           </div>
-          <div className="w-1/4 ">
+          <div className="md:w-1/4 w-full flex justify-center">
             <form onSubmit={() => navigate(`details/${search}`)}>
               <input
                 type="text"
@@ -94,7 +94,8 @@ const Infinite = () => {
             rounded
             transition
             ease-in-out
-            w-[300px]
+            md:w-[300px]
+              w-full
             focus:text-white focus:bg-darkBg focus:border-sky-600 focus:outline-none
           "
                 id="pokeSearch"

@@ -22,7 +22,7 @@ const Card = ({ pokeid }) => {
 
   return (
     <div
-      className={`card h-[370px] w-80 border-1 bg-darkBgCard border-sky-900  transition-all rounded-xl shadow-xl px-5  py-8 relative  ${
+      className={`  h-[370px] w-80 border-1 bg-darkBgCard border-sky-900  transition-all rounded-xl shadow-xl px-5  py-8 relative  ${
         hoverClassMap[pokemon.types[0].type.name]
       }  `}
     >
